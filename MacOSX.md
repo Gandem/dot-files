@@ -28,7 +28,7 @@ Download and install a [powerline font](https://github.com/powerline/fonts) (Lib
 
 For cool emoticons for folders and git, install [Awesome terminal fonts](https://github.com/gabrielelana/awesome-terminal-fonts/wiki/OS-X).
 
-If you have installed **awesome terminal fonts** as per above, the `.zshrc` in `./config` should set a cool theme, with some useful aliases !
+If you have installed **awesome terminal fonts** as per above, the [`.zshrc`](config/.zshrc) in [`config/`](config) should set a cool theme, with some useful aliases !
 
 ## Other binaries
 
@@ -41,7 +41,7 @@ brew install yarn
 brew install go
 ```
 
-The `.zshrc` already set the `$GOPATH` to `~/.local` change it, if you want to put it elsewhere !
+The [`.zshrc`](config/.zshrc) already set the `$GOPATH` to `~/.local` change it, if you want to put it elsewhere !
 
 ## Useful software
 
@@ -94,17 +94,17 @@ git config --global user.name "Your Name"
 
 Personally, I have many email addresses I use with git, so I wrote a helper script which asks you which email address you should use for a repo, each time you `clone` or `init` a repo:
 
-To use it, simply copy `./scripts/git-email-prompt.sh` to a folder included in `$PATH` (like `~/.local/bin`) and uncomment the git section in `.zshrc` !
+To use it, simply copy [`./scripts/git-email-prompt.sh`](scripts/git-email-prompt.sh) to a folder included in `$PATH` (like `~/.local/bin`) and uncomment the git section in `.zshrc` !
 
 Don't forget to fill the **MAILS** variable in git-email-prompt.sh !
 
 ### screen configuration
 
-Copy `./config/.screenrc` to your `$HOME`. Don't forget to change the default screen title !
+Copy [`./config/.screenrc`](config/.screenrc) to your `$HOME`. Don't forget to change the default screen title !
 
 ### ssh configuration
 
-A config template is `./config/ssh-config`. Edit it as you wish and copy it to `~/.ssh/config` !
+A config template is [`./config/ssh-config`](config/ssh-config). Edit it as you wish and copy it to `~/.ssh/config` !
 
 ### Optional
 
@@ -136,11 +136,11 @@ I like to manage my todolist with wunderline (a **CLI** interface for wunderlist
 yarn global add wunderline
 ```
 
-The `.zshrc` provided in `scripts/` already includes
+The [`.zshrc`](config/.zshrc) provided in [`config/`](config) already includes yarn global binaries in `$PATH`
 
 Then to authenticate with wunderline :
 ```sh
 wunderline auth
 ```
 
-Copy `./scripts/wunderline.sh` to a folder included in `$PATH` (like `~/.local/bin`) and uncomment the last line in `.zshrc` to execute **wunderline all** on the first time you open your shell !
+Copy [`./scripts/wunderline.sh`](scripts/wunderline.sh) to a folder included in `$PATH` (like `~/.local/bin`) and uncomment the last line in `.zshrc` to execute **wunderline all** on the first time you open your shell !
