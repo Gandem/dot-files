@@ -19,7 +19,7 @@ Then, we install oh-my-zsh :
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-And powerlevel9k:
+Powerlevel9k zsh theme :
 ```sh
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 ```
@@ -45,7 +45,7 @@ The [`.zshrc`](config/.zshrc) already set the `$GOPATH` to `~/.local` change it,
 
 ## Useful software
 
-And some software I use regularly:
+Here some software I use regularly:
 
 ```sh
 brew cask install slack
@@ -61,11 +61,11 @@ brew cask install google-chrome
 ```
 
 Note: I also like to have chrome canary but I couldn't find it on Caskroom, Direct-download seems the only option **:(**
-*(the same goes for Balsamiq-Mockups which cask formula doesn't seem to work)*
+*(the same goes for Balsamiq-Mockups for which the cask formula doesn't seem to work)*
 
 Then, we add `/usr/local/sbin` to the paths, after `/usr/local/bin` in `/etc/paths`.
 
-We do that so we could simply install the latest version of *tcpdump*, and other root-user-only utilities with **homebrew**:
+We do that so we could install the latest version of *tcpdump*, and other root-user-only utilities with **homebrew**:
 
 ```sh
 sudo sed -i.bak '/\/usr\/local\/bin/a\
