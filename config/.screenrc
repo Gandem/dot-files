@@ -1,0 +1,4 @@
+shelltitle 'YOURTITLE'
+hardstatus off
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-w%?%{r}(%{W}%n %t%?(%u)%?%{r})%{w}%?%+w%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'

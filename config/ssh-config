@@ -1,0 +1,13 @@
+#PermitLocalCommand yes
+#LocalCommand screen.sh %h
+
+Host SOMEALIAS
+    HostName SOMEHOSTNAME
+    Port SOMEPORT
+    User SOMEUSER
+
+Host github.com
+    IdentityFile SOMEDEFAULTKEY
+
+Host gitlab.com
+    IdentityFile ANOTHERKEY
