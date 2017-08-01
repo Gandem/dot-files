@@ -1,0 +1,18 @@
+MOSH=true
+
+for i in "$@"
+do
+case ${i} in
+    -s|--ssh)
+    MOSH=false
+    ;;
+
+    *)
+    echo "Unknown option"       # unknown option
+    ;;
+esac
+done
+
+if [ ${MOSH} == true ]; then mosh zen;
+else ssh zen;
+fi
