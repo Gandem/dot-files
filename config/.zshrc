@@ -121,43 +121,51 @@ alias du='du -h'
 # Ask confirmation for 'rm *'
 unsetopt rm_star_silent
 
-################################
-# 3. Creating correct git conf #
-################################
-
-#function git() {
-#    for i do
-#        lastArgument=$i
-#    done
-#
-#    /usr/bin/git $@
-#
-#    if [[ $? -eq 0 ]]
-#    then
-#        if [[ "$1" = "init" || "$1" = "clone" ]]
-#        then
-#            if [[ -d "$lastArgument" ]]
-#            then
-#                cd $lastArgument
-#            else if [[ "$lastArgument" != "init" && "$lastArgument" != "clone" ]]
-#            then
-#                cd $(echo $lastArgument | awk -F/ '{ print $NF }' | rev | sed 's/tig.//' | rev)
-#            fi
-#            fi
-#        git-email-prompt.sh
-#        fi
-#    else
-#        return $?
-#    fi
-#}
-
 ######################
-# 4. Overriding path #
+# 3. Overriding path #
 ######################
 
 # Setting GOPATH
 export GOPATH=$HOME/.local
 PATH=$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$PATH
+
+################################
+# 4. Creating correct git conf #
+################################
+
+GIT_PATH=$(which git)
+
+function git() {
+    for i do
+        lastArgument=$i
+    done
+
+    args=
+    for arg in "$@";
+    do
+        args="$args '$arg'"
+    done
+
+    eval $GIT_PATH $args
+
+    if [[ $? -eq 0 ]]
+    then
+        if [[ "$1" = "init" || "$1" = "clone" ]]
+        then
+            if [[ -d "$lastArgument" ]]
+            then
+                cd $lastArgument
+            else if [[ "$lastArgument" != "init" && "$lastArgument" != "clone" ]]
+            then
+                cd $(echo $lastArgument | awk -F/ '{ print $NF }' | rev | sed 's/tig.//' | rev)
+            fi
+            fi
+        git-email-prompt.sh
+        fi
+    else
+        return $?
+    fi
+}
 
 ################################
 # 5. Start Wunderline          #
