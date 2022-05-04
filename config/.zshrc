@@ -136,8 +136,10 @@ PATH=$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$PATH
 GIT_PATH=$(which git)
 
 function git() {
-    for i do
-        lastArgument=$i
+    i=1
+    while [ "$i" -le "$#" ]; do
+        eval "lastArgument=\${$i}"
+        i=$((i + 1))
     done
 
     args=
